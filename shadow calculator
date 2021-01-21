@@ -1,0 +1,37 @@
+import math
+
+print("Welcome to the shadow calculator v1.0.0.2")
+print("Warning:This calculator uses simulation calculations on the day of the spring equinox,It's not a represent real data")
+
+he=eval(input("Please enter the height of the object you want to measure(cm):"))
+h=int(input("Please enter hour(6~18):"))
+m=int(input("Please enter minute(0~59):"))
+
+hem=he/100
+rm=m/60
+hm=h+rm
+
+if m < 60 and m > -1 :
+
+ if hm <= 12 and hm >= 6 :
+     y=hm-6
+     z=15*y
+     a=math.tan(math.radians(z))
+     b=hem/a
+     sh=b*100
+     print("when",h,":",m,",","your shadow length is",sh,"cm")
+
+
+ elif hm <= 18 and hm >= 12 :
+     y=18-hm
+     z=15*y
+     a=math.tan(math.radians(z))
+     b=hem/a
+     sh=b*100
+     print("when",h,":",m,",","your shadow length is",sh,"cm")
+ else :
+     print("syntax error")
+
+else :
+ print("syntax error")   
+    
